@@ -3,105 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lekhan H R - 3D portfolio experience with interactive projects">
-    <meta name="theme-color" content="#0b0e11">
-    <meta name="author" content="Lekhan H R">
-    <meta property="og:title" content="Lekhan H R | 3D Portfolio Experience">
-    <meta property="og:description" content="Minimal 3D world with interactive projects and contact info">
-    <meta property="og:type" content="website">
-    <title>Lekhan H R | 3D Portfolio Experience</title>
+    <meta name="description" content="Lekhan H R - Minimal portfolio inspired by editorial studio aesthetics.">
+    <meta name="theme-color" content="#f6f2ec">
+    <title>Lekhan H R | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/experience.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/puntocero.css">
 </head>
-<body>
-    <canvas id="world" aria-label="3D portfolio world"></canvas>
-
-    <div class="ui">
-        <header class="hud">
+<body class="page">
+    <header class="nav">
+        <div class="container nav-inner">
             <div class="brand">
-                <span class="brand-dot" aria-hidden="true"></span>
+                <span class="brand-name" data-gh="name">Lekhan H R</span>
+                <span class="brand-meta">@<span data-gh="login">lekhanpro</span></span>
+            </div>
+            <nav class="nav-links">
+                <a class="active" href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="experience.html">Experience</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <a class="nav-cta" href="projects.html">Start</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
                 <div>
-                    <p class="brand-name">Lekhan H R</p>
-                    <p class="brand-role">Full-Stack Developer</p>
+                    <p class="eyebrow">Portfolio</p>
+                    <h1>
+                        <span data-gh="name">Lekhan H R</span><br>
+                        Digital maker in motion.
+                    </h1>
+                    <p data-gh="bio">Loading GitHub profile...</p>
+                    <div class="hero-meta">
+                        <span data-gh="location">Location</span>
+                        <a data-gh-link="blog" data-gh="website" href="#">Website</a>
+                        <a data-gh-link="github" href="#">GitHub</a>
+                    </div>
+                </div>
+                <div class="abstract-stack">
+                    <div class="abstract-shape one"></div>
+                    <div class="abstract-shape two"></div>
+                    <div class="abstract-shape three"></div>
                 </div>
             </div>
-            <nav class="hud-nav" aria-label="Sections">
-                <button class="hud-btn" data-panel="about">About</button>
-                <button class="hud-btn" data-panel="projects">Projects</button>
-                <button class="hud-btn" data-panel="contact">Contact</button>
-            </nav>
-        </header>
+        </section>
 
-        <div class="hud-footer">
-            <div class="hud-hint">Drag to look - Scroll to zoom - Tap a marker</div>
-            <div class="hud-status" id="hudStatus">Loading 3D world...</div>
-        </div>
-    </div>
-
-    <div class="panel" id="panel" aria-hidden="true">
-        <div class="panel-card" role="dialog" aria-modal="true" aria-labelledby="panelTitle">
-            <button class="panel-close" id="panelClose" type="button">Close</button>
-            <div class="panel-body">
-                <h2 id="panelTitle" class="panel-title">About</h2>
-                <section id="panel-about" class="panel-section">
-                    <p>
-                        I build fast, expressive web experiences with a focus on clarity, motion, and solid
-                        engineering. This portfolio is a minimal 3D playground you can explore on desktop or mobile.
-                    </p>
-                    <div class="panel-grid">
-                        <div class="panel-tile">
-                            <h3>Focus</h3>
-                            <p>Full-stack apps, interactive UI, and 3D on the web.</p>
-                        </div>
-                        <div class="panel-tile">
-                            <h3>Tooling</h3>
-                            <p>JavaScript, modern frameworks, and performance-first design.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="panel-projects" class="panel-section" hidden>
-                    <div class="gh-profile">
-                        <img id="gh-profile-avatar" alt="GitHub avatar">
-                        <div>
-                            <div id="gh-profile-name" class="gh-name">GitHub</div>
-                            <div id="gh-profile-bio" class="gh-bio">Loading profile...</div>
-                            <div class="gh-stats">
-                                <div><span id="gh-repos-count">0</span> Repos</div>
-                                <div><span id="gh-followers-count">0</span> Followers</div>
-                                <div><span id="gh-stars-count">0</span> Stars</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="gh-achievements" class="gh-achievements"></div>
-                    <div id="gh-projects-grid" class="project-grid"></div>
-                </section>
-
-                <section id="panel-contact" class="panel-section" hidden>
-                    <p>Open to collaborations, freelance work, and full-time roles.</p>
-                    <div class="panel-grid">
-                        <div class="panel-tile">
-                            <h3>Email</h3>
-                            <p>lekhanhr@example.com</p>
-                        </div>
-                        <div class="panel-tile">
-                            <h3>GitHub</h3>
-                            <p>github.com/lekhanpro</p>
-                        </div>
-                        <div class="panel-tile">
-                            <h3>LinkedIn</h3>
-                            <p>linkedin.com/in/lekhanhr</p>
-                        </div>
-                    </div>
-                </section>
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-title">Selected Projects</h2>
+                    <span class="section-note">Auto-synced from GitHub</span>
+                </div>
+                <div class="grid projects" data-projects data-limit="6">
+                    <p data-gh-error></p>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <script type="module" src="js/experience.js"></script>
-    <script defer src="js/github-api.js"></script>
-    <script defer src="js/experience-ui.js"></script>
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-title">Experience Snapshot</h2>
+                    <span class="section-note">GitHub Timeline</span>
+                </div>
+                <div class="timeline" data-experience data-limit="4"></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container contact-grid">
+                <div class="contact-card">
+                    <p class="eyebrow">Contact</p>
+                    <h2 class="section-title">Let’s build something precise.</h2>
+                    <p data-gh="email">Email not public</p>
+                    <div class="hero-meta">
+                        <a data-gh-link="email" href="#">Email</a>
+                        <a data-gh-link="github" href="#">GitHub</a>
+                        <a data-gh-link="twitter" href="#">Twitter</a>
+                    </div>
+                </div>
+                <div class="abstract-gallery">
+                    <div class="abstract-card"></div>
+                    <div class="abstract-card"></div>
+                    <div class="abstract-card"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">Portfolio driven by GitHub data · <span data-gh="joined">Joined</span></div>
+    </footer>
+
+    <script defer src="js/site.js"></script>
 </body>
 </html>

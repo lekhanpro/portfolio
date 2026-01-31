@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lekhanhr.vercel.app/sitemap.xml
+Sitemap: https://lekhanpro.github.io/portfolio/sitemap.xml

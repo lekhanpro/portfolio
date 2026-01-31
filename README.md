@@ -1,26 +1,25 @@
 # Lekhan H R - Portfolio
 
-Minimal 3D portfolio experience with interactive markers, GitHub-powered projects, and a clean HUD UI.
+Minimal editorial portfolio inspired by studio-style layouts, with content pulled live from GitHub.
 
 ## Features
-- Three.js 3D world with orbit controls and clickable markers
-- GitHub REST API integration for profile stats, achievements, and featured repos
-- Panel-based UI for About, Projects, and Contact
-- Desktop + mobile friendly controls (drag, pinch, scroll)
+- Studio-inspired minimal layout with airy typography
+- GitHub REST API integration for profile stats and projects
+- Dynamic About, Projects, Experience, and Contact content
+- Responsive multi-page layout for desktop + mobile
 - SEO-friendly meta tags plus `sitemap.xml` and `robots.txt`
 
 ## Pages
-- `index.html` - 3D portfolio experience
-- `about.html` - Legacy about page
-- `projects.html` - Legacy projects page
-- `experience.html` - Legacy experience page
-- `contact.html` - Legacy contact page
+- `index.html` - Home
+- `about.html` - About
+- `projects.html` - Projects
+- `experience.html` - Experience
+- `contact.html` - Contact
 
 ## Tech Stack
 - HTML5, CSS3, Vanilla JS
-- Three.js (ESM import via CDN)
-- GitHub REST API
-- Google Fonts: Inter, JetBrains Mono
+- GitHub REST API (public endpoints)
+- Google Fonts: Cormorant Garamond, Manrope
 
 ## Project Structure
 ```
@@ -31,12 +30,10 @@ portfoiloo/
   experience.html
   contact.html
   css/
-    experience.css
+    puntocero.css
     style.css
   js/
-    experience.js
-    experience-ui.js
-    github-api.js
+    site.js
   images/
   sitemap.xml
   robots.txt
@@ -61,11 +58,10 @@ php -S localhost:8000
 Then open `http://localhost:8000` in your browser.
 
 ## Configuration
-- GitHub username: update `GITHUB_USERNAME` in `js/github-api.js`
-- GitHub cache duration: update `CACHE_DURATION` in `js/github-api.js`
-- 3D scene: adjust markers, colors, and camera settings in `js/experience.js`
-- Theme styles: update CSS variables in `css/experience.css`
-- Contact info: update the Contact panel content in `index.html`
+- GitHub username: update `GITHUB_USERNAME` in `js/site.js`
+- GitHub cache duration: update `CACHE_DURATION` in `js/site.js`
+- Theme styles: update CSS variables in `css/puntocero.css`
+- Contact info: update the Contact details in `contact.html`
 
 ## Deploy
 ### GitHub Pages

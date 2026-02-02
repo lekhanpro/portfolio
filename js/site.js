@@ -239,40 +239,63 @@ function renderLanguages(languages) {
 }
 
 function renderProjects(repos) {
-    document.querySelectorAll('[data-projects]').forEach(container => {
-        const limit = parseInt(container.dataset.limit || '6', 10);
-        const topRepos = getTopRepos(repos, limit);
-        container.innerHTML = '';
-        topRepos.forEach(repo => {
-            const gradient = projectGradient(repo.name);
-            const year = repo.updated_at ? new Date(repo.updated_at).getFullYear() : '';
-            const card = document.createElement('article');
-            card.className = 'project-card';
-            card.innerHTML = `
-                <div class="project-thumb"></div>
-                <div class="project-body">
-                    <div class="project-meta">
-                        <span>${repo.language || 'General'}</span>
-                        <span>${year || '—'}</span>
-                    </div>
-                    <h3>${repo.name.replace(/-/g, ' ')}</h3>
-                    <p>${repo.description || 'No description provided yet.'}</p>
-                    <div class="project-links">
-                        ${repo.homepage ? `<a href="${ensureUrl(repo.homepage)}" target="_blank" rel="noopener">Live</a>` : ''}
-                        <a href="${repo.html_url}" target="_blank" rel="noopener">Source</a>
-                    </div>
+    const grid = document.getElementById('projects-grid');
+    if (!grid) return;
+
+    const limit = 6;
+    const topRepos = getTopRepos(repos, limit);
+    grid.innerHTML = '';
+
+    topRepos.forEach(repo => {
+        const year = repo.updated_at ? new Date(repo.updated_at).getFullYear() : '';
+        const card = document.createElement('article');
+        card.className = 'reveal p-8 neu-md bg-surface rounded-[40px] flex flex-col h-full';
+        card.innerHTML = `
+            <div class="flex justify-between items-start mb-6">
+                <div class="w-12 h-12 neu-sm bg-surface rounded-2xl flex items-center justify-center text-text-secondary">
+                    <i data-lucide="folder" class="w-6 h-6"></i>
                 </div>
-            `;
-            const thumb = card.querySelector('.project-thumb');
-            if (thumb) {
-                thumb.style.background = `
-                    radial-gradient(circle at 20% 20%, hsl(${gradient.hue1} 50% 80%), transparent 55%),
-                    radial-gradient(circle at 80% 80%, hsl(${gradient.hue2} 55% 75%), #f1e7db)
-                `;
-            }
-            container.appendChild(card);
-        });
+                <div class="flex gap-2">
+                    ${repo.stargazers_count > 0 ? `
+                        <div class="px-3 py-1 neu-inset bg-surface rounded-lg text-[10px] font-bold flex items-center gap-1">
+                            <i data-lucide="star" class="w-3 h-3"></i> ${repo.stargazers_count}
+                        </div>
+                    ` : ''}
+                    <span class="px-3 py-1 neu-inset bg-surface rounded-lg text-[10px] font-bold tracking-widest uppercase text-text-muted">
+                        ${repo.language || 'Code'}
+                    </span>
+                </div>
+            </div>
+            <h3 class="text-xl font-extrabold mb-3 capitalize">${repo.name.replace(/-/g, ' ')}</h3>
+            <p class="text-sm text-text-secondary leading-relaxed mb-8 flex-grow">
+                ${repo.description || 'A custom built project demonstrating technical proficiency and architectural design.'}
+            </p>
+            <div class="flex items-center justify-between mt-auto">
+                <span class="text-[10px] font-bold text-text-muted tracking-widest uppercase">${year}</span>
+                <div class="flex gap-3">
+                    ${repo.homepage ? `
+                        <a href="${ensureUrl(repo.homepage)}" target="_blank" class="p-2 neu-sm bg-surface rounded-xl neu-btn text-text-secondary hover:text-text-primary">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    ` : ''}
+                    <a href="${repo.html_url}" target="_blank" class="p-2 neu-sm bg-surface rounded-xl neu-btn text-text-secondary hover:text-text-primary">
+                        <i data-lucide="github" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        `;
+        grid.appendChild(card);
     });
+
+    // Re-initialize Lucide icons for new content
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
+    
+    // Re-initialize ScrollReveal for new content
+    if (window.initScrollReveal) {
+        window.initScrollReveal();
+    }
 }
 
 function renderExperience(profile, repos, languages) {

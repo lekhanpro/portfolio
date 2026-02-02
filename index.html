@@ -3,103 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lekhan H R - Minimal portfolio inspired by editorial studio aesthetics.">
-    <meta name="theme-color" content="#f6f2ec">
+    <meta name="description" content="Lekhan H R - Fullstack Developer & Product Designer. Neumorphic portfolio.">
     <title>Lekhan H R | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/puntocero.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        bg: 'var(--bg-color)',
+                        surface: 'var(--surface-color)',
+                        'text-primary': 'var(--text-primary)',
+                        'text-secondary': 'var(--text-secondary)',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="page">
-    <header class="nav">
-        <div class="container nav-inner">
-            <div class="brand">
-                <span class="brand-name" data-gh="name">Lekhan H R</span>
-                <span class="brand-meta">@<span data-gh="login">lekhanpro</span></span>
+<body class="bg-bg text-text-primary transition-colors duration-300">
+    <div id="cursor-dot" class="cursor-dot hidden lg:block"></div>
+    <div id="cursor-ring" class="cursor-ring hidden lg:block"></div>
+
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 py-4 px-6">
+        <nav class="max-w-6xl mx-auto flex items-center justify-between neu-md bg-surface/80 backdrop-blur-md rounded-2xl px-6 py-3">
+            <div class="flex items-center gap-2">
+                <span class="font-bold text-xl tracking-tight">Lekhan H R</span>
             </div>
-            <nav class="nav-links">
-                <a class="active" href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="projects.html">Projects</a>
-                <a href="experience.html">Experience</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-            <a class="nav-cta" href="projects.html">Start</a>
-        </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#hello" class="text-sm font-medium hover:text-text-secondary transition-colors">Hello</a>
+                <a href="#trust" class="text-sm font-medium hover:text-text-secondary transition-colors">Trust</a>
+                <a href="#evidence" class="text-sm font-medium hover:text-text-secondary transition-colors">Evidence</a>
+                <a href="#services" class="text-sm font-medium hover:text-text-secondary transition-colors">Services</a>
+                <a href="#faq" class="text-sm font-medium hover:text-text-secondary transition-colors">FAQ</a>
+                <a href="#contact" class="text-sm font-medium hover:text-text-secondary transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" class="p-2 neu-sm bg-surface rounded-full neu-btn">
+                    <i data-lucide="moon" class="w-5 h-5 dark:hidden"></i>
+                    <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                </button>
+                <a href="#contact" class="hidden sm:block px-5 py-2 neu-sm bg-surface rounded-xl text-sm font-bold neu-btn">New Project</a>
+            </div>
+        </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="container hero-grid">
+    <main class="relative z-10 pt-32">
+        <!-- Hero Section -->
+        <section id="hello" class="max-w-6xl mx-auto px-6 py-20 min-h-[80vh] flex flex-col items-center text-center">
+            <div class="reveal mb-8">
+                <span class="px-4 py-2 neu-sm bg-surface rounded-full text-xs font-bold text-text-secondary tracking-widest uppercase">
+                    +10 years of experience
+                </span>
+            </div>
+            <h1 class="reveal embossed-text mb-8 leading-[1.1]">
+                HELLO I'M A<br>FULLSTACK<br>DEVELOPER
+            </h1>
+            <p class="reveal max-w-2xl text-xl text-text-secondary leading-relaxed mb-12">
+                I help <strong>startups</strong> and <strong>studios</strong> build <strong>accessible</strong>, high-performance web products with clear, efficient methodology.
+            </p>
+            <div class="reveal flex flex-wrap justify-center gap-4 mb-20">
+                <div class="px-6 py-3 neu-sm bg-surface rounded-xl flex items-center gap-3">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-text-secondary"></i>
+                    <span class="text-sm font-bold">Bangalore, India</span>
+                </div>
+                <div class="px-6 py-3 neu-sm bg-surface rounded-xl flex items-center gap-3">
+                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span class="text-sm font-bold">Available for new projects</span>
+                </div>
+            </div>
+
+            <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+                <div class="p-8 neu-md bg-surface rounded-3xl">
+                    <div class="flex justify-between items-start mb-6">
+                        <i data-lucide="layers" class="w-8 h-8 text-text-secondary"></i>
+                        <span class="text-xs font-bold text-text-muted">FRONTEND</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 neu-inset bg-surface rounded-lg text-xs font-bold">React</span>
+                        <span class="px-3 py-1 neu-inset bg-surface rounded-lg text-xs font-bold">Next.js</span>
+                        <span class="px-3 py-1 neu-inset bg-surface rounded-lg text-xs font-bold">Tailwind</span>
+                        <span class="px-3 py-1 neu-inset bg-surface rounded-lg text-xs font-bold">Three.js</span>
+                    </div>
+                </div>
+                <div class="p-8 neu-md bg-surface rounded-3xl">
+                    <div class="flex justify-between items-start mb-6">
+                        <i data-lucide="database" class="w-8 h-8 text-text-secondary"></i>
+                        <span class="text-xs font-bold text-text-muted">BACKEND</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 neu-inset bg-surface rounded-lg text-xs font-bold">Node.js</span>
+                        <span class="px-3 py-1 neu-inset bg-surface rounded-lg text-xs font-bold">Python</span>
+                        <span class="px-3 py-1 neu-inset bg-surface rounded-lg text-xs font-bold">PostgreSQL</span>
+                        <span class="px-3 py-1 neu-inset bg-surface rounded-lg text-xs font-bold">Supabase</span>
+                    </div>
+                </div>
+                <div class="p-8 neu-md bg-surface rounded-3xl">
+                    <div class="flex justify-between items-start mb-6">
+                        <i data-lucide="cpu" class="w-8 h-8 text-text-secondary"></i>
+                        <span class="text-xs font-bold text-text-muted">AI & TOOLS</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 neu-inset bg-surface rounded-lg text-xs font-bold">TensorFlow</span>
+                        <span class="px-3 py-1 neu-inset bg-surface rounded-lg text-xs font-bold">PyTorch</span>
+                        <span class="px-3 py-1 neu-inset bg-surface rounded-lg text-xs font-bold">Docker</span>
+                        <span class="px-3 py-1 neu-inset bg-surface rounded-lg text-xs font-bold">Git</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Section -->
+        <section id="trust" class="max-w-6xl mx-auto px-6 py-32">
+            <div class="reveal mb-16">
+                <h2 class="text-4xl font-extrabold mb-4">Why should you trust me?</h2>
+                <div class="h-1 w-20 bg-text-primary rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="reveal">
+                    <div class="w-14 h-14 neu-sm bg-surface rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="award" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Field Experience</h3>
+                    <p class="text-text-secondary leading-relaxed">
+                        With over a decade in the industry, I've navigated through various technologies and architectural challenges, ensuring stable and scalable results.
+                    </p>
+                </div>
+                <div class="reveal">
+                    <div class="w-14 h-14 neu-sm bg-surface rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="eye" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Product Vision</h3>
+                    <p class="text-text-secondary leading-relaxed">
+                        I don't just write code; I think about the product. I focus on user experience, business goals, and maintainability.
+                    </p>
+                </div>
+                <div class="reveal">
+                    <div class="w-14 h-14 neu-sm bg-surface rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="terminal" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Clear Method</h3>
+                    <p class="text-text-secondary leading-relaxed">
+                        Transparency is key. I use a clear, iterative process with regular updates and documented milestones.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Evidence (Projects) Section -->
+        <section id="evidence" class="max-w-6xl mx-auto px-6 py-32">
+            <div class="reveal flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                 <div>
-                    <p class="eyebrow">Portfolio</p>
-                    <h1>
-                        <span data-gh="name">Lekhan H R</span><br>
-                        Digital maker in motion.
-                    </h1>
-                    <p data-gh="bio">Loading GitHub profile...</p>
-                    <div class="hero-meta">
-                        <span data-gh="location">Location</span>
-                        <a data-gh-link="blog" data-gh="website" href="#">Website</a>
-                        <a data-gh-link="github" href="#">GitHub</a>
+                    <h2 class="text-4xl font-extrabold mb-4">Evidence of work</h2>
+                    <p class="text-text-secondary">Selected projects, auto-synced from GitHub.</p>
+                </div>
+                <div class="h-1 flex-1 mx-8 bg-text-muted/20 hidden md:block rounded-full"></div>
+                <a href="https://github.com/lekhanpro" target="_blank" class="px-6 py-3 neu-sm bg-surface rounded-xl text-sm font-bold neu-btn flex items-center gap-2">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                    See more on GitHub
+                </a>
+            </div>
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projects injected by site.js -->
+                <div class="col-span-full py-20 text-center">
+                    <div class="inline-block w-8 h-8 border-4 border-text-muted/20 border-t-text-primary rounded-full animate-spin mb-4"></div>
+                    <p class="text-text-secondary font-medium">Fetching GitHub data...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="max-w-6xl mx-auto px-6 py-32">
+            <div class="reveal mb-16 text-center">
+                <h2 class="text-4xl font-extrabold mb-4">What I can do for you</h2>
+                <p class="text-text-secondary max-w-xl mx-auto">Tailored solutions for your digital needs, from quick audits to complete product launches.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="reveal p-10 neu-md bg-surface rounded-[40px] flex flex-col items-center text-center">
+                    <div class="w-20 h-20 neu-sm bg-surface rounded-[30px] flex items-center justify-center mb-8">
+                        <i data-lucide="search-check" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-2xl font-extrabold mb-4">Audit & Optimization</h3>
+                    <p class="text-text-secondary mb-8">Performance analysis, accessibility audit, and code quality review.</p>
+                    <div class="mt-auto px-6 py-2 neu-inset bg-surface rounded-full text-xs font-bold tracking-widest text-text-muted">
+                        3-7 DAYS
                     </div>
                 </div>
-                <div class="abstract-stack">
-                    <div class="abstract-shape one"></div>
-                    <div class="abstract-shape two"></div>
-                    <div class="abstract-shape three"></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-head">
-                    <h2 class="section-title">Selected Projects</h2>
-                    <span class="section-note">Auto-synced from GitHub</span>
-                </div>
-                <div class="grid projects" data-projects data-limit="6">
-                    <p data-gh-error></p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-head">
-                    <h2 class="section-title">Experience Snapshot</h2>
-                    <span class="section-note">GitHub Timeline</span>
-                </div>
-                <div class="timeline" data-experience data-limit="4"></div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container contact-grid">
-                <div class="contact-card">
-                    <p class="eyebrow">Contact</p>
-                    <h2 class="section-title">Let’s build something precise.</h2>
-                    <p data-gh="email">Email not public</p>
-                    <div class="hero-meta">
-                        <a data-gh-link="email" href="#">Email</a>
-                        <a data-gh-link="github" href="#">GitHub</a>
-                        <a data-gh-link="twitter" href="#">Twitter</a>
+                <div class="reveal p-10 neu-md bg-surface rounded-[40px] flex flex-col items-center text-center border-2 border-text-primary/5">
+                    <div class="w-20 h-20 neu-sm bg-surface rounded-[30px] flex items-center justify-center mb-8">
+                        <i data-lucide="code-2" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-2xl font-extrabold mb-4">Feature Development</h3>
+                    <p class="text-text-secondary mb-8">Building specific modules, AI integrations, or complex UI components.</p>
+                    <div class="mt-auto px-6 py-2 neu-inset bg-surface rounded-full text-xs font-bold tracking-widest text-text-muted">
+                        1-4 WEEKS
                     </div>
                 </div>
-                <div class="abstract-gallery">
-                    <div class="abstract-card"></div>
-                    <div class="abstract-card"></div>
-                    <div class="abstract-card"></div>
+                <div class="reveal p-10 neu-md bg-surface rounded-[40px] flex flex-col items-center text-center">
+                    <div class="w-20 h-20 neu-sm bg-surface rounded-[30px] flex items-center justify-center mb-8">
+                        <i data-lucide="rocket" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-2xl font-extrabold mb-4">Complete Product</h3>
+                    <p class="text-text-secondary mb-8">End-to-end development from design to deployment and maintenance.</p>
+                    <div class="mt-auto px-6 py-2 neu-inset bg-surface rounded-full text-xs font-bold tracking-widest text-text-muted">
+                        1-6 MONTHS
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="max-w-3xl mx-auto px-6 py-32">
+            <div class="reveal mb-16">
+                <h2 class="text-4xl font-extrabold mb-4 text-center">FAQ</h2>
+            </div>
+            <div class="space-y-6">
+                <div class="reveal p-6 neu-sm bg-surface rounded-2xl cursor-pointer group" onclick="this.querySelector('.faq-answer').classList.toggle('hidden'); this.querySelector('.faq-icon').classList.toggle('rotate-180')">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-lg">What is your typical tech stack?</h3>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer hidden mt-4 text-text-secondary leading-relaxed">
+                        I primarily work with React, Next.js, and Tailwind CSS on the frontend. For the backend, I use Node.js, Python, and Supabase or PostgreSQL. I also have extensive experience with AI tools and libraries.
+                    </div>
+                </div>
+                <div class="reveal p-6 neu-sm bg-surface rounded-2xl cursor-pointer group" onclick="this.querySelector('.faq-answer').classList.toggle('hidden'); this.querySelector('.faq-icon').classList.toggle('rotate-180')">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-lg">Do you work on existing codebases?</h3>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer hidden mt-4 text-text-secondary leading-relaxed">
+                        Yes, I frequently help teams optimize, refactor, or add features to their existing projects. I take time to understand the current architecture before proposing improvements.
+                    </div>
+                </div>
+                <div class="reveal p-6 neu-sm bg-surface rounded-2xl cursor-pointer group" onclick="this.querySelector('.faq-answer').classList.toggle('hidden'); this.querySelector('.faq-icon').classList.toggle('rotate-180')">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-bold text-lg">How do you handle project management?</h3>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 transition-transform duration-300"></i>
+                    </div>
+                    <div class="faq-answer hidden mt-4 text-text-secondary leading-relaxed">
+                        I use agile methodologies with weekly sprints and clear deliverables. I communicate through Slack, Discord, or Email and provide regular video updates on progress.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="max-w-4xl mx-auto px-6 py-32">
+            <div class="reveal p-12 md:p-20 neu-lg bg-surface rounded-[60px] text-center">
+                <h2 class="text-5xl font-extrabold mb-8 embossed-text">READY TO START?</h2>
+                <p class="text-xl text-text-secondary mb-12">I'm currently open to new collaborations and high-impact projects.</p>
+                <form class="max-w-lg mx-auto space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <input type="text" placeholder="Name" class="w-full px-6 py-4 neu-inset bg-surface rounded-2xl focus:outline-none focus:ring-2 focus:ring-text-primary/10">
+                        <input type="email" placeholder="Email" class="w-full px-6 py-4 neu-inset bg-surface rounded-2xl focus:outline-none focus:ring-2 focus:ring-text-primary/10">
+                    </div>
+                    <textarea placeholder="Tell me about your project..." rows="4" class="w-full px-6 py-4 neu-inset bg-surface rounded-2xl focus:outline-none focus:ring-2 focus:ring-text-primary/10"></textarea>
+                    <button type="submit" class="w-full py-5 neu-sm bg-surface rounded-2xl font-bold text-lg neu-btn">
+                        Send Message
+                    </button>
+                </form>
+                <div class="mt-16 flex flex-wrap justify-center gap-8 text-text-muted">
+                    <a href="https://github.com/lekhanpro" target="_blank" class="hover:text-text-primary transition-colors flex items-center gap-2">
+                        <i data-lucide="github" class="w-5 h-5"></i> GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/lekhanhr" target="_blank" class="hover:text-text-primary transition-colors flex items-center gap-2">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
+                    </a>
+                    <a href="mailto:lekhanhr@example.com" class="hover:text-text-primary transition-colors flex items-center gap-2">
+                        <i data-lucide="mail" class="w-5 h-5"></i> Email
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">Portfolio driven by GitHub data · <span data-gh="joined">Joined</span></div>
+    <!-- Footer Fade Overlay -->
+    <div class="fixed bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-bg to-transparent pointer-events-none z-40"></div>
+
+    <footer class="relative z-10 py-12 text-center text-text-muted text-sm font-medium">
+        <p>&copy; 2026 LEKHAN H R. Handcrafted with neumorphism.</p>
     </footer>
 
-    <script defer src="js/site.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/site.js"></script>
 </body>
 </html>

@@ -1,411 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="About Lekhan H R - Computer Science Student, Full-Stack Developer & AI Enthusiast">
-    <meta name="theme-color" content="#0a0a0a">
+    <meta name="description" content="About Lekhan H R - GitHub powered portfolio">
+    <meta name="theme-color" content="#f6f2ec">
     <title>About | Lekhan H R</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/puntocero.css">
 </head>
-
-<body>
-    <!-- Animated Background -->
-    <div class="bg-wrapper">
-        <div class="gradient-sphere sphere-1"></div>
-        <div class="gradient-sphere sphere-2"></div>
-        <div class="gradient-sphere sphere-3"></div>
-        <div class="grid-overlay"></div>
-        <div class="noise-overlay"></div>
-    </div>
-
-    <!-- Cursor Glow -->
-    <div class="cursor-glow" id="cursorGlow"></div>
-
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <span class="logo-icon">
-                    <svg viewBox="0 0 40 40" fill="none">
-                        <rect x="4" y="4" width="32" height="32" rx="8" stroke="url(#logoGrad2)" stroke-width="2" />
-                        <path d="M12 20L18 14L24 20L18 26L12 20Z" fill="url(#logoGrad2)" />
-                        <defs>
-                            <linearGradient id="logoGrad2" x1="0" y1="0" x2="40" y2="40">
-                                <stop offset="0%" stop-color="#6366f1" />
-                                <stop offset="100%" stop-color="#a855f7" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </span>
-                <span class="logo-text">Lekhan</span>
-            </a>
-            <div class="nav-menu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link active">
-                    <span class="link-dot"></span>
-                    About
-                </a>
-                <a href="projects.html" class="nav-link">Projects</a>
-                <a href="experience.html" class="nav-link">Experience</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+<body class="page">
+    <header class="nav">
+        <div class="container nav-inner">
+            <div class="brand">
+                <span class="brand-name" data-gh="name">Lekhan H R</span>
+                <span class="brand-meta">@<span data-gh="login">lekhanpro</span></span>
             </div>
-            <div class="nav-actions">
-                <a href="contact.html" class="btn btn-glow">
-                    <span>Let's Connect</span>
-                    <div class="btn-shimmer"></div>
-                </a>
-            </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a class="active" href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="experience.html">Experience</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <a class="nav-cta" href="projects.html">Start</a>
         </div>
-    </nav>
+    </header>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-bg"></div>
-        <div class="mobile-menu-content">
-            <a href="index.html" class="mobile-link">Home</a>
-            <a href="about.html" class="mobile-link active">About</a>
-            <a href="projects.html" class="mobile-link">Projects</a>
-            <a href="experience.html" class="mobile-link">Experience</a>
-            <a href="contact.html" class="mobile-link">Contact</a>
-        </div>
-    </div>
-
-    <!-- Page Header -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="page-hero-content" data-aos="fade-up">
-                <span class="section-tag">
-                    <span class="tag-dot"></span>
-                    About Me
-                </span>
-                <h1 class="page-title">
-                    The story behind<br><span class="text-gradient">the code</span>
-                </h1>
-                <p class="page-subtitle">
-                    I'm passionate about building software that makes a difference.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Profile Section -->
-    <section class="section">
-        <div class="container">
-            <div class="about-profile-grid">
-                <!-- Profile Card -->
-                <div class="profile-card" data-aos="fade-right">
-                    <div class="profile-image-container">
-                        <div class="profile-image">
-                            <div class="profile-placeholder">
-                                <span>👨‍💻</span>
-                            </div>
-                        </div>
-                        <div class="profile-glow"></div>
-                    </div>
-                    <div class="profile-info">
-                        <span class="profile-status">
-                            <span class="status-dot"></span>
-                            Available for opportunities
-                        </span>
-                        <h2 class="profile-name">Lekhan H R</h2>
-                        <p class="profile-role">Full-Stack Developer & AI Enthusiast</p>
-                        <div class="profile-location">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                <circle cx="12" cy="10" r="3" />
-                            </svg>
-                            <span>Bengaluru, India</span>
-                        </div>
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <p class="eyebrow">About</p>
+                    <h1 class="page-title">A profile shaped by open source.</h1>
+                    <p data-gh="bio">Loading GitHub profile...</p>
+                    <div class="hero-meta">
+                        <span data-gh="location">Location</span>
+                        <span data-gh="company">Company</span>
+                        <a data-gh-link="github" href="#">GitHub</a>
                     </div>
                 </div>
+                <div class="abstract-stack">
+                    <div class="abstract-shape one"></div>
+                    <div class="abstract-shape two"></div>
+                    <div class="abstract-shape three"></div>
+                    <img class="profile-portrait" data-gh="avatar" alt="GitHub avatar">
+                </div>
+            </div>
+        </section>
 
-                <!-- Bio Section -->
-                <div class="bio-section" data-aos="fade-left">
-                    <h3 class="bio-heading">Who I Am</h3>
-                    <div class="bio-text">
-                        <p>
-                            I'm a Computer Science student at <strong>Don Bosco Institute of Technology</strong>,
-                            driven by a passion for creating innovative solutions that address real-world problems.
-                        </p>
-                        <p>
-                            My journey in tech started with a fascination for how software can transform experiences.
-                            Today, I specialize in <strong>full-stack development</strong> and <strong>AI-powered
-                                applications</strong>,
-                            constantly pushing the boundaries of what's possible with code.
-                        </p>
-                        <p>
-                            When I'm not coding, you'll find me exploring new technologies,
-                            contributing to research, or working on side projects that challenge my skills.
-                        </p>
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-title">Profile Stats</h2>
+                    <span class="section-note">Live GitHub signals</span>
+                </div>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-label">Followers</div>
+                        <div class="stat-value" data-gh="followers">0</div>
                     </div>
-
-                    <div class="bio-stats">
-                        <div class="bio-stat">
-                            <span class="stat-number">4+</span>
-                            <span class="stat-text">Projects</span>
-                        </div>
-                        <div class="bio-stat">
-                            <span class="stat-number">1</span>
-                            <span class="stat-text">IEEE Paper</span>
-                        </div>
-                        <div class="bio-stat">
-                            <span class="stat-number">10+</span>
-                            <span class="stat-text">Technologies</span>
-                        </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Public Repos</div>
+                        <div class="stat-value" data-gh="repos">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Joined</div>
+                        <div class="stat-value" data-gh="joined">—</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Top Language</div>
+                        <div class="stat-value" data-gh-languages-placeholder>—</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section class="section skills-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-tag">
-                    <span class="tag-dot"></span>
-                    Tech Stack
-                </span>
-                <h2 class="section-title">
-                    Tools & <span class="text-gradient">Technologies</span>
-                </h2>
-                <p class="section-desc">
-                    The technologies I work with to bring ideas to life.
-                </p>
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-title">Language Focus</h2>
+                    <span class="section-note">From public repositories</span>
+                </div>
+                <div class="stats" data-gh-languages></div>
             </div>
+        </section>
+    </main>
 
-            <div class="skills-grid">
-                <!-- Frontend -->
-                <div class="skill-category" data-aos="fade-up">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                            </svg>
-                        </div>
-                        <h3 class="category-title">Frontend</h3>
-                    </div>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <span class="skill-icon">⚛️</span>
-                            <span class="skill-name">React</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">📱</span>
-                            <span class="skill-name">React Native</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🎨</span>
-                            <span class="skill-name">Tailwind CSS</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">📜</span>
-                            <span class="skill-name">JavaScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🔷</span>
-                            <span class="skill-name">TypeScript</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Backend -->
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                        </div>
-                        <h3 class="category-title">Backend</h3>
-                    </div>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <span class="skill-icon">🟢</span>
-                            <span class="skill-name">Node.js</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🐍</span>
-                            <span class="skill-name">Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🔥</span>
-                            <span class="skill-name">Firebase</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🚀</span>
-                            <span class="skill-name">Express.js</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- AI/ML -->
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path
-                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                            </svg>
-                        </div>
-                        <h3 class="category-title">AI & ML</h3>
-                    </div>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <span class="skill-icon">🤖</span>
-                            <span class="skill-name">Groq AI</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🦙</span>
-                            <span class="skill-name">LLaMA</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🧠</span>
-                            <span class="skill-name">Machine Learning</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">📊</span>
-                            <span class="skill-name">Data Analysis</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tools -->
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path
-                                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                                <circle cx="12" cy="12" r="3" />
-                            </svg>
-                        </div>
-                        <h3 class="category-title">Tools</h3>
-                    </div>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <span class="skill-icon">📦</span>
-                            <span class="skill-name">Git & GitHub</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">💻</span>
-                            <span class="skill-name">VS Code</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">🎨</span>
-                            <span class="skill-name">Figma</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon">📲</span>
-                            <span class="skill-name">Expo</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-card" data-aos="zoom-in">
-                <div class="cta-bg"></div>
-                <div class="cta-content">
-                    <h2 class="cta-title">Interested in working <span class="text-gradient">together</span>?</h2>
-                    <p class="cta-text">I'm always open to discussing new opportunities and creative ideas.</p>
-                    <a href="contact.html" class="btn btn-white">
-                        <span>Get in Touch</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="footer-logo">
-                        <span class="logo-icon">
-                            <svg viewBox="0 0 40 40" fill="none">
-                                <rect x="4" y="4" width="32" height="32" rx="8" stroke="url(#footerGrad2)"
-                                    stroke-width="2" />
-                                <path d="M12 20L18 14L24 20L18 26L12 20Z" fill="url(#footerGrad2)" />
-                                <defs>
-                                    <linearGradient id="footerGrad2" x1="0" y1="0" x2="40" y2="40">
-                                        <stop offset="0%" stop-color="#6366f1" />
-                                        <stop offset="100%" stop-color="#a855f7" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                        </span>
-                        <span>Lekhan H R</span>
-                    </a>
-                    <p class="footer-desc">Building digital experiences that matter.</p>
-                    <div class="footer-socials">
-                        <a href="https://github.com/lekhanhr" target="_blank" class="social-link" aria-label="GitHub">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                        </a>
-                        <a href="https://linkedin.com/in/lekhanhr" target="_blank" class="social-link"
-                            aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                            </svg>
-                        </a>
-                        <a href="https://twitter.com/lekhanhr" target="_blank" class="social-link" aria-label="Twitter">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-col">
-                        <h4>Navigation</h4>
-                        <a href="index.html">Home</a>
-                        <a href="about.html">About</a>
-                        <a href="projects.html">Projects</a>
-                        <a href="experience.html">Experience</a>
-                        <a href="contact.html">Contact</a>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Connect</h4>
-                        <a href="https://github.com/lekhanhr" target="_blank">GitHub</a>
-                        <a href="https://linkedin.com/in/lekhanhr" target="_blank">LinkedIn</a>
-                        <a href="https://twitter.com/lekhanhr" target="_blank">Twitter</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 Lekhan H R. Crafted with 💜</p>
-                <p class="footer-tech">Built with HTML, CSS & JS</p>
-            </div>
-        </div>
+        <div class="container">Portfolio driven by GitHub data · <span data-gh="joined">Joined</span></div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script defer src="js/site.js"></script>
 </body>
-
 </html>
